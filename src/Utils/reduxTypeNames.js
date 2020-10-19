@@ -1,0 +1,1 @@
+export const IS_DRAWER_EXPANDED = 'IS_DRAWER_EXPANDED'; 

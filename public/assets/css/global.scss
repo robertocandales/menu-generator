@@ -1,0 +1,39 @@
+//  this is the global css file which is imported in pages/_app.js
+@font-face {
+  font-family: "Aristotelica SemiBold";
+  src: url("../fonts/Aristotelica_SemiBold.ttf") format("truetype");
+}
+
+.slick-list {
+  //  background-color: red;
+  height: 110px !important;
+}
+
+.slick-next,
+.slick-prev {
+  background-color: yellowgreen !important;
+  border-radius: 20px !important;
+}
+
+.slick-prev {
+  left: 10px !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(194, 194, 194);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(153, 153, 153);
+}
