@@ -134,16 +134,6 @@ export default function Component1({
         isMulti
         options={vales}
         styles={customStyles}
-        //theme={(theme) => ({
-        //  ...theme,
-        //  borderRadius: 10,
-        //  outline: 'none',
-        //  colors: {
-        //    ...theme.colors,
-        //    primary25: 'grey',
-        //    primary: 'black',
-        //  },
-        //})}
       />
     </div>
   );

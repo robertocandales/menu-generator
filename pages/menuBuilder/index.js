@@ -8,7 +8,7 @@ const index = () => {
   return (
     <div>
       <Head>
-        <title>Smartavola</title>
+        <title>MenuGenerator</title>
       </Head>
       <Container>
         {' '}

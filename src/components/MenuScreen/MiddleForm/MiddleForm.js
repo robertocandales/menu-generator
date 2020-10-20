@@ -3,6 +3,7 @@ import { Grid, Paper, TextField } from '@material-ui/core';
 import UploadButton from '../../UploadButton/UploadButton';
 import { COLORS } from '../../../Utils/Colors/color';
 import { makeStyles } from '@material-ui/core/styles';
+import { handleUpload } from '../../../hooks/storageImage';
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -93,14 +94,12 @@ const MiddleForm = ({
                 onChange={(pictures) => {
                   const file = pictures[0];
 
-                  if (file.size > 500000) {
-                    alert('Image size very large, choose another image please, max size 500kb');
-                  } else {
-                    let reader = new FileReader();
-                    reader.readAsDataURL(file);
-                    reader.onloadend = function () {
-                      setPicture(reader.result);
-                    };
+                  if (file.size > 5000000) {
+                    alert('Image size very large, choose another image please, max size 5Mb');
+                  } else if (file.type === 'image/png' || file.type === 'image/jpg') {
+                    const res = handleUpload('menu', file, setPicture);
+                  } else if (file.type !== 'image/png' || file.type !== 'image/jpg') {
+                    alert('Image have to .png or JPG extension');
                   }
                 }}
                 icon={

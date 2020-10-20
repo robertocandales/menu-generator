@@ -80,7 +80,6 @@ const AmericanPremium = () => {
   const globalState = useContext(store);
 
   const { QRcodeURLDispatch, QRcodeURLState } = globalState;
-  console.log(QRcodeURLState);
   const classes = useStyles();
   const router = useRouter();
 
@@ -121,7 +120,7 @@ const AmericanPremium = () => {
             return { id: doc.id, ...doc.data() };
           });
           const pr = items.filter((x) => x.user === user.email);
-          console.log(pr);
+
           setProducts(pr);
         })
         .catch((er) => {
@@ -193,14 +192,14 @@ const AmericanPremium = () => {
 
   const renderMenuLogo = () => {
     return (
-      <Grid item xs>
+      <Grid item xs style={{ marginTop: '20px' }}>
         <img
           src={
             data.isProductsWithPicture && data.picture !== ''
               ? data.picture
               : '/assets/images/american/amr_logo_w.png'
           }
-          width='90'
+          width='250'
         />
       </Grid>
     );
@@ -415,7 +414,7 @@ const AmericanPremium = () => {
       ) : (
         <div className={classes.innerRoot}>
           <Grid container direction='column' justify='center' alignItems='center'>
-            {renderSmartLogo()}
+            {/*{renderSmartLogo()}*/}
             {renderMenuLogo()}
             {renderRestaurantDetails()}
             {renderSocialLinks()}

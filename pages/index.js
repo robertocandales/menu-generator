@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Smartavola</title>
+        <title>MenuGenerator</title>
       </Head>
       <Container>
         <Category />

@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 // import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import IosAddCircleOutline from 'react-ionicons/lib/IosAddCircleOutline';
 import Typography from '@material-ui/core/Typography';
+import { handleUpload } from '../../hooks/storageImage';
 
 const useStyles = makeStyles(() => ({
   input: {

@@ -10,7 +10,7 @@ const Details = () => {
   return (
     <div>
       <Head>
-        <title>Smartavola</title>
+        <title>MenuGenerator</title>
         {/*<meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />*/}
       </Head>
       <Container>

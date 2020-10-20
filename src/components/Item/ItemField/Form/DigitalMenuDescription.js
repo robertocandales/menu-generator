@@ -13,6 +13,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import UploadButton from '../../../UploadButton/UploadButton';
 import { COLORS } from '../../../../Utils/Colors/color';
 import { Typography } from '@material-ui/core';
+import { handleUpload } from '../../../../hooks/storageImage';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -98,27 +99,20 @@ const DigitalMenuDescription = ({ picture, setPicture, menuDescription, setMenuD
                 }
                 onChange={(pictures) => {
                   const file = pictures[0];
-                  if (file.size > 500000) {
-                    alert('Image size very large, choose another image please, max size 500kb');
-                  } else {
-                    let reader = new FileReader();
-                    reader.readAsDataURL(file);
-                    reader.onloadend = function () {
-                      setPicture(reader.result);
-                    };
+                  console.log(file);
+                  if (file.size > 5000000) {
+                    alert('Image size very large, choose another image please, max size 5Mb');
+                  } else if (file.type === 'image/png' || file.type === 'image/jpg') {
+                    const res = handleUpload('products', file, setPicture);
+                  } else if (file.type !== 'image/png' || file.type !== 'image/jpg') {
+                    alert('Image have to .png or JPG extension');
                   }
-
-                  //  let reader = new FileReader();
-                  //  reader.readAsDataURL(file);
-                  //  reader.onloadend = function () {
-                  //    setPicture(reader.result);
-                  //  };
                 }}
                 //icon={
                 //  <img
                 //    alt='thumbnail icon'
                 //    src={picture || '/assets/images/picIcon.png'}
-                //    className={`${classes.icon} ${classes.bigIcon}`}
+                //    style={{ width: '20px', height: '20px' }}
                 //  />
                 //}
               />{' '}

@@ -73,7 +73,7 @@ const ResetAndSaveButton = () => {
       title: 'Save',
       icon: <MdSave className={classes.icon} />,
       onPress: () => handleSubmit(),
-      style: { backgroundColor: COLORS.PRIMARY, color: 'black' },
+      style: { backgroundColor: COLORS.PRIMARY },
     },
     //{
     //  title: 'PRINT',

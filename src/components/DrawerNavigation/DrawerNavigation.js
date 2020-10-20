@@ -55,9 +55,10 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 36,
   },
   drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-    whiteSpace: 'nowrap',
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
   },
   drawerOpen: {
     width: drawerWidth,
@@ -162,6 +163,7 @@ const DrawerNavigation = ({ children }) => {
       <CssBaseline />
 
       <Drawer
+        anchor={theme.direction === 'rtl' ? 'top' : 'bottom'}
         style={router.query.menus ? { display: 'none' } : { display: 'flex' }}
         variant='permanent'
         className={clsx(classes.drawer, {
@@ -179,11 +181,14 @@ const DrawerNavigation = ({ children }) => {
           {open ? (
             <img
               alt='big-logo'
-              style={{ width: '80%', height: 'auto' }}
-              src={'/assets/images/logo.png'}
+              style={{ width: '50%', height: 'auto' }}
+              src={'https://menudigital.gal/archivos/imagenes/imagen-header.png'}
             />
           ) : (
-            <Avatar style={{ width: 50, height: 'auto' }} src={'/assets/images/logo_color.png'} />
+            <Avatar
+              style={{ width: 50, height: 'auto' }}
+              src={'https://menudigital.gal/archivos/imagenes/imagen-header.png'}
+            />
           )}
           <div
             style={{
@@ -198,7 +203,9 @@ const DrawerNavigation = ({ children }) => {
                 height: 'auto',
                 // margin: '2em'
               }}
-              src={'/assets/images/avatar4.jpg'}
+              src={
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRzbk3YmKA-JytIht3_JdDSGnEJvty8Gj7lug&usqp=CAU'
+              }
             />
             {open && (
               <div

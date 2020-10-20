@@ -27,7 +27,9 @@ export const DragableList = ({ setVisibleCategories, setSubCategories, visibleCa
 
             if (categories.length) {
               setCategories(categories.filter((x) => x.user === user.email));
-              const visiblesCat = categories.filter((cat) => cat.isVisibleOnMenu === true);
+              const visiblesCat = categories
+                .filter((x) => x.user === user.email)
+                .filter((cat) => cat.isVisibleOnMenu === true);
               if (categories.length && visiblesCat.length && visibleCategories.length) {
                 if (visiblesCat.length > visibleCategories.length) {
                   filterVisibleCat(

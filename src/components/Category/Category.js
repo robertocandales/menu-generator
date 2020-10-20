@@ -305,6 +305,7 @@ const Category = () => {
           alignItems='center'
           md={6}
           sm={12}
+          item
           style={{ maxHeight: '95vh', overflowY: 'auto' }}>
           <Grid item sm={12}>
             {' '}

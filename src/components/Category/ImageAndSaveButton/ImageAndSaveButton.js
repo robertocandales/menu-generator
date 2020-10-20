@@ -6,6 +6,7 @@ import { COLORS } from '../../../Utils/Colors/color';
 import Fab from '@material-ui/core/Fab';
 import ModalComponent from '../../Global/ModalComponent/ModalComponent';
 import ResetButton from '../../Global/ResetButton/ResetButton';
+import { handleUpload } from '../../../hooks/storageImage';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -89,22 +90,13 @@ const ImageAndSaveButton = ({
             onChange={(pictures) => {
               const file = pictures[0];
 
-              if (file.size > 500000) {
-                alert('Image size very large, choose another image please, max size 50kb');
-              } else {
-                let reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onloadend = function () {
-                  const base64 = reader.result;
-                  setThumbnail(base64);
-                };
+              if (file.size > 5000000) {
+                alert('Image size very large, choose another image please, max size 5Mb');
+              } else if (file.type === 'image/png' || file.type === 'image/jpg') {
+                const res = handleUpload('categories', file, setThumbnail);
+              } else if (file.type !== 'image/png' || file.type !== 'image/jpg') {
+                alert('Image have to .png or JPG extension');
               }
-              //  let reader = new FileReader();
-              //  reader.readAsDataURL(file);
-              //  reader.onloadend = function () {
-              //    const base64 = reader.result;
-              //    setThumbnail(base64);
-              //  };
             }}
             icon={
               <img
@@ -123,7 +115,6 @@ const ImageAndSaveButton = ({
               padding: '2em',
               width: '100%',
               borderRadius: 100,
-              color: 'black',
             }}
             //onClick={sendData}
             type='submit'>

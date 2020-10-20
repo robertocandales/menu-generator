@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 10,
   },
   imageDiv: {
-    backgroundColor: 'white',
+    backgroundColor: '#2a2a2a',
     borderRadius: 200,
     padding: 15,
     width: 200,
@@ -85,7 +85,7 @@ const AmericanDetails = () => {
 
   const [product, setProduct] = useState({});
   const [data, setData] = useState({});
-  console.log(data);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -121,7 +121,7 @@ const AmericanDetails = () => {
           <Avatar
             src={product?.image || '/assets/images/american/burger.png'}
             className={classes.avatar}
-            style={{ width: 150, height: 180 }}
+            style={{ width: 200, height: 200 }}
           />
           {/*<img
             alt='product'
@@ -169,7 +169,7 @@ const AmericanDetails = () => {
           </Grid>
         </Grid>
         <Grid item xs>
-          <Typography variant='body1' align='left' style={{ fontSize: 12 }}>
+          <Typography variant='body1' align='left' style={{ fontSize: 12, width: '80%' }}>
             {product.description}
           </Typography>
         </Grid>
@@ -212,7 +212,7 @@ const AmericanDetails = () => {
             {renderImage()}
             {renderDetails()}
             {renderBackButton()}
-            {renderSmartLogo()}
+            {/*{renderSmartLogo()}*/}
           </Grid>
         </div>
       )}

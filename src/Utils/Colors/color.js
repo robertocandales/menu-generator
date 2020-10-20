@@ -1,8 +1,8 @@
 import { lime, grey, red } from '@material-ui/core/colors';
-const PRIMARY = lime['A700'];
-const SECONDARY = grey[700];
-const ERROR = red.A400;
-const WHITE = '#FFFFFF';
+const PRIMARY = '#F7882F';
+const SECONDARY = '#F7C331';
+const ERROR = '#6B7A8F';
+const WHITE = '#DCC7AA';
 
 export const COLORS = {
   PRIMARY,

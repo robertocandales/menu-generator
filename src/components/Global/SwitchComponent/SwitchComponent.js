@@ -6,16 +6,17 @@ import useStyles from '@material-ui/core/styles/makeStyles';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { lime, grey } from '@material-ui/core/colors';
 import MuiSwitch from '@material-ui/core/Switch';
+import { COLORS } from '../../../Utils/Colors/color';
 
 const Switch = withStyles({
   switchBase: {
     color: grey[300],
     '&$checked': {
-      color: lime['A700'],
+      color: COLORS.PRIMARY,
     },
     '&$checked + $track': {
       opacity: '1',
-      backgroundColor: '#333333',
+      backgroundColor: COLORS.SECONDARY,
     },
   },
   checked: {},
