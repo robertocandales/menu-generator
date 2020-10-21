@@ -22,12 +22,12 @@ const LeftSideBar = ({ DBTemplates, setSelectedTemplateId, selectedTemplateId })
   return (
     <Paper
       elevation={3}
-      style={{ height: '100%', padding: '10px', maxHeight: '793px', overflowY: 'auto' }}>
-      <Grid item sm={12} container direction='row' justify='center' alignItems='center' spacing={2}>
-        <Grid item sm={12}>
+      style={{ height: '100%', padding: '10px', maxHeight: '88vh', overflowY: 'auto' }}>
+      <Grid item xs={12} container direction='row' justify='center' alignItems='center' spacing={2}>
+        <Grid item xs={12}>
           Select Design
         </Grid>
-        <Grid item sm={12}>
+        <Grid item xs={12}>
           {DBTemplates.map((item) => (
             <Grid
               key={item.id}

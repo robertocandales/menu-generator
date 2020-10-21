@@ -74,16 +74,16 @@ const Register = () => {
           render={({ errors, status, touched, handleSubmit }) => (
             <Form>
               <Paper elevation={4} style={{ padding: 40 }}>
-                <Grid item xs container spacing={0} justify='flex-start'>
+                {/*<Grid item xs container spacing={0} justify='flex-start'>
                   <div className='form-group'>
                     <Button
                       type='button'
-                      //  onClick={handleChangeLanguage}
+                        onClick={handleChangeLanguage}
                     >
                       change-language
                     </Button>
                   </div>
-                </Grid>
+                </Grid>*/}
                 <Grid container spacing={4} direction='row' alignItems='center' justify='center'>
                   <Grid item xs>
                     <Grid
@@ -93,7 +93,7 @@ const Register = () => {
                       alignItems='center'
                       justify='center'>
                       <Grid item xs container style={{ padding: '0px 15px' }}>
-                        <Grid
+                        {/*<Grid
                           item
                           xs
                           style={{
@@ -111,7 +111,7 @@ const Register = () => {
                             }}
                             src={'/assets/images/logo.png'}
                           />
-                        </Grid>
+                        </Grid>*/}
                       </Grid>
                       <br />
                     </Grid>
@@ -130,6 +130,7 @@ const Register = () => {
                     handleSubmit={handleSubmit}
                     setSubmitted={setSubmitted}
                     touched={touched}
+                    router={router}
                   />
                 </Grid>
               </Paper>

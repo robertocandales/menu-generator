@@ -92,7 +92,7 @@ const Item = () => {
   return (
     <>
       <Grid container direction='column' spacing={2}>
-        <Grid item sm={12} md={12} container>
+        <Grid item sm={12} md={12} xs={12} container>
           {loading ? (
             <SkeletonComponent />
           ) : (
@@ -105,7 +105,7 @@ const Item = () => {
             />
           )}
         </Grid>
-        <Grid item sm={12} md={12} container>
+        <Grid item sm={12} md={12} xs={12} container>
           {loading ? (
             <SkeletonComponent />
           ) : (
@@ -126,7 +126,7 @@ const Item = () => {
             />
           )}
         </Grid>
-        <Grid item sm={12} md={12} container>
+        <Grid item sm={12} md={12} xs={12} container>
           <EditionTable
             allItemsData={allItemsData}
             setAllItemsData={setAllItemsData}

@@ -2,7 +2,7 @@ import React from 'react';
 import DrawerNavigation from '../DrawerNavigation/DrawerNavigation';
 import Head from 'next/head';
 import clsx from 'clsx';
-import NavBar from '../NavBar/NavBar';
+import NavBar1 from '../NavBar/NavBar1';
 
 const Container = ({ children }) => {
   return (
@@ -14,9 +14,9 @@ const Container = ({ children }) => {
         />
         <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' />
       </Head>
-      {/*<DrawerNavigation children={children} />*/}
-      <NavBar />
-      <div style={{ padding: '20px' }}>{children}</div>
+
+      <NavBar1 />
+      <div style={{ padding: '10px', width: '100%' }}>{children}</div>
     </div>
   );
 };

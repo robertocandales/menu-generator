@@ -47,7 +47,7 @@ const DigitalMenuDescription = ({ picture, setPicture, menuDescription, setMenuD
       {/* information for online store */}
       <Paper style={{ padding: '10px', height: 178, width: '100%' }} elevation={4}>
         <Grid item container justify='center' alignItems='center' direction='row' spacing={1}>
-          <Grid item sm={8}>
+          <Grid item sm={8} xs={12}>
             <TextField
               name='digitalMenuDescription'
               placeholder='digital-menu-description'
@@ -60,7 +60,7 @@ const DigitalMenuDescription = ({ picture, setPicture, menuDescription, setMenuD
             />
           </Grid>
 
-          <Grid item sm={4}>
+          <Grid item xs={4}>
             <div
               className={classes.container}
               style={{
@@ -108,13 +108,6 @@ const DigitalMenuDescription = ({ picture, setPicture, menuDescription, setMenuD
                     alert('Image have to .png or JPG extension');
                   }
                 }}
-                //icon={
-                //  <img
-                //    alt='thumbnail icon'
-                //    src={picture || '/assets/images/picIcon.png'}
-                //    style={{ width: '20px', height: '20px' }}
-                //  />
-                //}
               />{' '}
             </div>
           </Grid>

@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import { COLORS } from '../../../Utils/Colors/color';
 import MdSave from '@material-ui/icons/Save';
+import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -26,24 +27,19 @@ const SaveButton = ({ handleSubmit }) => {
     },
   ];
   return (
-    <Grid container spacing={4} justify='space-between'>
-      <Grid item xs={12} sm={6} lg={4}></Grid>
-      <Grid item xs={12} sm={6} lg={8}>
-        <Grid container spacing={3} justify='flex-end'>
-          {BUTTONS.map((item, index) => (
-            <Grid key={index.toString()} item>
-              <Fab
-                type={item.title === 'Save' ? 'submit' : null}
-                form={item.title === 'Save' ? 'hook-form' : null}
-                variant='extended'
-                style={item?.style || {}}
-                onClick={() => item.onPress()}>
-                {item.icon} {item?.title}
-              </Fab>
-            </Grid>
-          ))}
+    <Grid container justify='center'>
+      {BUTTONS.map((item, index) => (
+        <Grid key={index.toString()} item>
+          <Button
+            type={item.title === 'Save' ? 'submit' : null}
+            form={item.title === 'Save' ? 'hook-form' : null}
+            variant='contained'
+            style={item?.style || {}}
+            onClick={() => item.onPress()}>
+            {item?.title}
+          </Button>
         </Grid>
-      </Grid>
+      ))}
     </Grid>
   );
 };

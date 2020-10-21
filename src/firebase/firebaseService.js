@@ -1,19 +1,14 @@
 import admin from 'firebase-admin';
-var serviceAccount = require('./serviceAccountKey.json');
+//var serviceAccount = require('./serviceAccountKey.json');
 
-// For production we will add this file to the env with the following
-// For Linux:
-// export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/service-account-file.json"
-// For Windows:
-// $env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\username\Downloads\service-account-file.json"
-
+console.log(process.env.FIREBASE_DATABASE_URL);
 try {
   if (!admin.apps.length) {
     admin.initializeApp({
       //   And access the credential with this
       // credential: admin.credential.applicationDefault(),
-      credential: admin.credential.cert(serviceAccount),
-      databaseURL: 'https://restaurant-menu-3718c',
+      credential: admin.credential.cert(JSON.parse(process.end.NEXT_PUBLIC_SERVICE_ACCOUNT_JSON)),
+      databaseURL: process.env.FIREBASE_DATABASE_URL,
     });
   }
 } catch (error) {

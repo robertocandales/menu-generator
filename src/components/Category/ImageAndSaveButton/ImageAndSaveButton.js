@@ -7,6 +7,7 @@ import Fab from '@material-ui/core/Fab';
 import ModalComponent from '../../Global/ModalComponent/ModalComponent';
 import ResetButton from '../../Global/ResetButton/ResetButton';
 import { handleUpload } from '../../../hooks/storageImage';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -70,16 +71,16 @@ const ImageAndSaveButton = ({
   const message =
     'ANTES DE BORRAR ESTA CATEGORIA REASIGNE A OTRA CATEGORIA LOS PRODUCTOS QUE LA INTEGRAN';
   return (
-    <div className={classes.mainContainer}>
+    <div>
       <Grid container direction='row' alignItems='center' justify='space-around' spacing={2}>
-        <Grid item xs={edit ? 6 : 6}>
+        <Grid item sm={edit ? 6 : 6} xs={12}>
           <UploadButton
             edit={edit}
             buttonProps={{
               variant: 'contained',
               component: 'span',
               style: {
-                backgroundColor: '#e5e5e5',
+                backgroundColor: COLORS.SECONDARY,
                 height: 60,
                 color: '#000',
                 width: '100%',
@@ -107,11 +108,12 @@ const ImageAndSaveButton = ({
             }
           />
         </Grid>
-        <Grid item xs={edit ? 2 : 2}>
-          <Fab
+        <Grid item sm={edit ? 2 : 2}>
+          {/*<Fab
             color='primary'
-            variant='extended'
+            variant='round'
             style={{
+              textAlign: 'center',
               padding: '2em',
               width: '100%',
               borderRadius: 100,
@@ -119,24 +121,19 @@ const ImageAndSaveButton = ({
             //onClick={sendData}
             type='submit'>
             save
-          </Fab>
+          </Fab>*/}
+          <Button color='primary' variant='contained' type='submit'>
+            Save
+          </Button>
         </Grid>{' '}
         {edit ? (
-          <Grid item xs={edit ? 2 : 2}>
-            <Fab
-              color='secondary'
-              variant='extended'
-              style={{
-                padding: '2em',
-                width: '100%',
-                borderRadius: 100,
-              }}
-              onClick={handleClickOpen}>
+          <Grid item sm={edit ? 2 : 2}>
+            <Button color='secondary' variant='contained' onClick={handleClickOpen}>
               Delete
-            </Fab>
+            </Button>
           </Grid>
         ) : null}
-        <Grid item xs={edit ? 2 : 2}>
+        <Grid item sm={edit ? 2 : 2}>
           <ResetButton resetData={resetData} />
         </Grid>
       </Grid>

@@ -19,7 +19,7 @@ const CategoriesAndProductsList = ({
       alignItems='stretch'
       spacing={2}
       style={{ minHeight: '550px' }}>
-      <Grid item sm={6}>
+      <Grid item sm={6} xs={12}>
         <Paper
           elevation={3}
           style={{
@@ -37,7 +37,7 @@ const CategoriesAndProductsList = ({
           />
         </Paper>
       </Grid>
-      <Grid item sm={6}>
+      <Grid item sm={6} xs={12}>
         {' '}
         <Paper
           elevation={3}

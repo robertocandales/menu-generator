@@ -226,12 +226,13 @@ const ItemField = ({
               item
               md={12}
               sm={12}
+              xs={12}
               container
               direction='row'
               justify='center'
               alignItems='center'
               spacing={4}>
-              <Grid item md={8} sm={12}>
+              <Grid item md={8} xs={12}>
                 <FormFields
                   setData={setData}
                   data={data}
@@ -262,7 +263,7 @@ const ItemField = ({
                 />
               </Grid>
 
-              <Grid md={4} sm={12} item>
+              <Grid md={4} xs={12} item>
                 {' '}
                 <DigitalMenuDescription
                   setData={setData}

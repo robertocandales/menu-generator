@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 
 const LeftForm = ({ Field, errors, ErrorMessage, touched }) => {
   return (
-    <div>
+    <>
       <Grid item xs container spacing={2}>
         <Grid item xs>
           <div className='form-group'>
@@ -157,7 +157,7 @@ const LeftForm = ({ Field, errors, ErrorMessage, touched }) => {
           </div>
         </Grid>
       </Grid>
-    </div>
+    </>
   );
 };
 const styles = {

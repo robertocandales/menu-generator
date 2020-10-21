@@ -4,6 +4,7 @@ import Fab from '@material-ui/core/Fab';
 import Grid from '@material-ui/core/Grid';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import { COLORS } from '../../../Utils/Colors/color';
+import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -65,16 +66,9 @@ const ResetButton = ({ resetData }) => {
     <Grid container spacing={4} justify='center' alignItems='center'>
       {BUTTONS.map((item, index) => (
         <Grid key={index.toString()} item xs={12}>
-          <Fab
-            variant='extended'
-            style={{
-              padding: '2em',
-              width: '100%',
-              borderRadius: 100,
-            }}
-            onClick={() => item.onPress()}>
-            {item.icon} {item?.title}
-          </Fab>
+          <Button variant='contained' color='primary' onClick={() => item.onPress()}>
+            {item?.title}
+          </Button>
         </Grid>
       ))}
     </Grid>

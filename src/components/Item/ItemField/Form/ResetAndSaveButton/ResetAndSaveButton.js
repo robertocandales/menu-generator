@@ -13,6 +13,7 @@ import Fab from '@material-ui/core/Fab';
 import { useForm } from 'react-hook-form';
 import { COLORS } from '../../../../../Utils/Colors/color';
 import { store } from '../../../../../context/store';
+import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -75,27 +76,19 @@ const ResetAndSaveButton = () => {
       onPress: () => handleSubmit(),
       style: { backgroundColor: COLORS.PRIMARY },
     },
-    //{
-    //  title: 'PRINT',
-    //  icon: <MdPrint className={classes.icon} />,
-    //  onPress: () => {
-    //    window.print();
-    //  },
-    //  style: { backgroundColor: COLORS.WHITE, height: '35px' },
-    //},
   ];
   return (
     <Grid container spacing={3} justify='space-around' alignItems='center'>
       {BUTTONS.map((item, index) => (
         <Grid key={index.toString()} item>
-          <Fab
+          <Button
             type={item.title === 'Save' ? 'submit' : null}
             form={item.title === 'Save' ? 'hook-form' : null}
-            variant='extended'
+            variant='contained'
             style={item?.style || {}}
             onClick={() => item.onPress()}>
-            {item.icon} {item?.title}
-          </Fab>
+            {item?.title}
+          </Button>
         </Grid>
       ))}
     </Grid>

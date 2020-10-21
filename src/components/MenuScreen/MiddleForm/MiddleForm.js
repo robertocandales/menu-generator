@@ -30,7 +30,7 @@ const MiddleForm = ({
   const classes = useStyles();
   return (
     <Grid item container direction='row' justify='center' alignItems='stretch' spacing={2}>
-      <Grid item sm={4} xs={4}>
+      <Grid item sm={4} xs={12}>
         <Paper
           elevation={3}
           style={{
@@ -51,7 +51,7 @@ const MiddleForm = ({
           />
         </Paper>
       </Grid>
-      <Grid item sm={4} xs={4}>
+      <Grid item sm={4} xs={12}>
         {' '}
         <Paper
           elevation={3}
@@ -64,11 +64,11 @@ const MiddleForm = ({
           <Grid
             item
             container
-            direction='column'
-            justify='space-around'
+            direction='row'
+            justify='center'
             alignItems='center'
-            style={{ height: '100%', width: '100%' }}>
-            <Grid item>
+            style={{ height: '100%', width: '100%', padding: '10px' }}>
+            <Grid item xs={12}>
               <TextField
                 label='Insert Store Name'
                 fullWidth
@@ -76,7 +76,7 @@ const MiddleForm = ({
                 onChange={(e) => setStoreName(e.target.value)}
               />
             </Grid>
-            <Grid item style={{ padding: '10px' }}>
+            <Grid item xs={12} style={{ padding: '10px' }}>
               <UploadButton
                 buttonProps={{
                   variant: 'contained',
@@ -86,7 +86,7 @@ const MiddleForm = ({
                     backgroundColor: COLORS.PRIMARY,
                     height: 40,
                     color: '#000',
-                    marginTop: '-20px',
+                    width: '100%',
                   },
                 }}
                 rootProps={{}}
@@ -114,7 +114,7 @@ const MiddleForm = ({
           </Grid>
         </Paper>
       </Grid>
-      <Grid item sm={4} xs={4} container>
+      <Grid item sm={4} xs={12} container>
         <Grid item sm={12} container>
           <Paper
             elevation={3}

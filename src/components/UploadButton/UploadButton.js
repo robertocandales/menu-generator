@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
   },
   button: {
     color: '#fff',
-    borderRadius: 100,
+    borderRadius: 50,
   },
   icon: {
     fontWeight: 'bold',

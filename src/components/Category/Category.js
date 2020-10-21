@@ -198,11 +198,11 @@ const Category = () => {
     sendData(category, selectSalesTaxOptions);
   };
   return (
-    <Grid container direction='column' justify='space-between' alignItems='flex-start'>
+    <Grid container direction='column' justify='center' alignItems='center'>
       <Grid
         container
         direction='row'
-        justify='space-around'
+        justify='center'
         alignItems='flex-start'
         xs={12}
         item
@@ -248,7 +248,7 @@ const Category = () => {
             alignItems='flex-start'
             item
             md={6}
-            sm={12}>
+            xs={12}>
             <form
               noValidate
               autoComplete='off'
@@ -304,15 +304,15 @@ const Category = () => {
           justify='center'
           alignItems='center'
           md={6}
-          sm={12}
+          xs={12}
           item
-          style={{ maxHeight: '95vh', overflowY: 'auto' }}>
-          <Grid item sm={12}>
+          style={{ maxHeight: '95vh', overflowY: 'auto', width: '100%' }}>
+          <Grid item xs={12} container>
             {' '}
             {loading ? (
               <SkeletonComponent />
             ) : (
-              <div style={{ width: '100%' }}>
+              <>
                 {' '}
                 <CategoriesListRenew
                   addCategoryData={addCategoryData}
@@ -322,7 +322,7 @@ const Category = () => {
                   setisVisibleInDigitalMenu={setisVisibleInDigitalMenu}
                   setisVisibleForTakeAway={setisVisibleForTakeAway}
                 />
-              </div>
+              </>
             )}
           </Grid>
         </Grid>

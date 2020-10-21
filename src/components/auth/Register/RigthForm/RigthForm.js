@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import StripeCheckoutComponent from '../../StripeCheckoutComponent/StripeCheckoutComponent';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import { Typography } from '@material-ui/core';
 
 const RigthForm = ({
   Field,
@@ -15,12 +16,13 @@ const RigthForm = ({
   handleSubmit,
   setSubmitted,
   touched,
+  router,
 }) => {
   return (
     <>
-      <Grid item xs>
+      <Grid item xs={12} sm={6} container>
         <Grid container spacing={2} direction='column' alignItems='center' justify='center'>
-          <Grid item xs container spacing={2}>
+          <Grid item container spacing={2}>
             <Grid item xs>
               <div className='form-group'>
                 <label htmlFor='email' style={styles.formLabel}>
@@ -36,7 +38,7 @@ const RigthForm = ({
               </div>
             </Grid>
           </Grid>
-          <Grid item xs container spacing={2}>
+          <Grid item container spacing={2}>
             <Grid item xs>
               <div className='form-group'>
                 <label htmlFor='userName' style={styles.formLabel}>
@@ -54,7 +56,7 @@ const RigthForm = ({
               </div>
             </Grid>
           </Grid>
-          <Grid item xs container spacing={2}>
+          <Grid item container spacing={2}>
             <Grid item xs>
               <div className='form-group'>
                 <label htmlFor='password' style={styles.formLabel}>
@@ -72,7 +74,7 @@ const RigthForm = ({
               </div>
             </Grid>
           </Grid>
-          <Grid item xs container spacing={2}>
+          <Grid item container spacing={2}>
             <Grid item xs>
               <div className='form-group'>
                 <label htmlFor='confirmPassword' style={styles.formLabel}>
@@ -91,33 +93,51 @@ const RigthForm = ({
               </div>
             </Grid>
           </Grid>
-          <Grid item xs container spacing={0} justify='flex-start'>
+          {/*<Grid item xs container spacing={0} justify='flex-start'>
             <div className='form-group'>
               <Button disabled>
                 {' '}
                 <StripeCheckoutComponent />
               </Button>
             </div>
-          </Grid>
-          <Grid item xs container spacing={0} justify='flex-start'>
-            <div className='form-group'>
+          </Grid>*/}
+          <Grid item container spacing={2} justify='center' alignItems='center' sm={12}>
+            <Grid item sm={6} container justify='center'>
               <Button
+                variant='contained'
+                color='primary'
                 type='button'
                 disabled={isSaving}
-                style={styles.formButton}
+                //style={styles.formButton}
                 onClick={(e) => {
                   setSubmitted(true);
                   handleSubmit();
                 }}>
                 register
               </Button>
-            </div>
+            </Grid>
+            <Grid item sm={6} container alignItems='center' justify='center'>
+              <Grid item sm={12}>
+                {' '}
+                <Typography>Do you already have an account?</Typography>
+              </Grid>
+              <Grid item sm={12} container justify='center'>
+                {' '}
+                <Button
+                  variant='contained'
+                  color='secondary'
+                  onClick={() => router.push(`/auth/login`)}>
+                  Login
+                </Button>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
     </>
   );
 };
+
 const styles = {
   formInput: {
     borderRadius: 4,

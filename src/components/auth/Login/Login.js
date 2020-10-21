@@ -46,7 +46,15 @@ const Login = () => {
           <Form>
             <Paper elevation={4} style={{ padding: 40 }}>
               <Grid container spacing={2} direction='column' alignItems='center' justify='center'>
-                <Grid item xs container style={{ padding: '15px 15px 25px 15px' }}>
+                <Grid item xs>
+                  <Typography variant='subtitle2'>
+                    {/* {i18n.t("change-language")} */}Don't have an account?
+                    <Button style={{ color: 'blue' }} onClick={() => router.push(`/auth/register`)}>
+                      Sign up
+                    </Button>
+                  </Typography>
+                </Grid>
+                {/*<Grid item xs container style={{ padding: '15px 15px 25px 15px' }}>
                   <Grid
                     item
                     xs
@@ -66,78 +74,65 @@ const Login = () => {
                       src={'/assets/images/logo.png'}
                     />
                   </Grid>
-                </Grid>
-                <Grid item xs container spacing={2}>
+                </Grid>*/}
+                <Grid item container spacing={2}>
                   <Grid item xs>
-                    <div className='form-group'>
-                      <label htmlFor='confirmPassword' style={styles.formLabel}>
-                        {/*{i18n.t('email')}*/} email
-                      </label>
-                      <Field
-                        name='email'
-                        type='email'
-                        style={styles.formInput}
-                        className={
-                          'form-control' +
-                          (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')
-                        }
-                      />
-                      <ErrorMessage
-                        name='confirmPassword'
-                        component='div'
-                        className='invalid-feedback'
-                      />
-                    </div>
+                    <label htmlFor='confirmPassword' style={styles.formLabel}>
+                      {/*{i18n.t('email')}*/} email
+                    </label>
+                    <Field
+                      name='email'
+                      type='email'
+                      style={styles.formInput}
+                      className={
+                        'form-control' +
+                        (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')
+                      }
+                    />
+                    <ErrorMessage
+                      name='confirmPassword'
+                      component='div'
+                      className='invalid-feedback'
+                    />
                   </Grid>
                 </Grid>
-                <Grid item xs container spacing={2}>
+                <Grid item container spacing={2}>
                   <Grid item xs>
-                    <div className='form-group'>
-                      <label htmlFor='confirmPassword' style={styles.formLabel}>
-                        {/*{i18n.t('password')}*/} password
-                      </label>
-                      <Field
-                        name='password'
-                        type='password'
-                        style={styles.formInput}
-                        className={
-                          'form-control' +
-                          (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')
-                        }
-                      />
-                      <ErrorMessage
-                        name='confirmPassword'
-                        component='div'
-                        className='invalid-feedback'
-                      />
-                    </div>
+                    <label htmlFor='confirmPassword' style={styles.formLabel}>
+                      {/*{i18n.t('password')}*/} password
+                    </label>
+                    <Field
+                      name='password'
+                      type='password'
+                      style={styles.formInput}
+                      className={
+                        'form-control' +
+                        (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')
+                      }
+                    />
+                    <ErrorMessage
+                      name='confirmPassword'
+                      component='div'
+                      className='invalid-feedback'
+                    />
                   </Grid>
                 </Grid>
-                <Grid item xs container spacing={0} justify='center'>
-                  <div className='form-group'>
-                    <Button type='submit' style={styles.formButton}>
-                      {/* {i18n.t("register")} */}Login
-                    </Button>
-                  </div>
+                <Grid item container spacing={0} justify='center'>
+                  <Button type='submit' variant='contained' color='primary'>
+                    {/* {i18n.t("register")} */}Login
+                  </Button>
                 </Grid>
-                <Grid item xs container spacing={0} justify='flex-start'>
+                {/*<Grid item xs container spacing={0} justify='flex-start'>
                   <div className='form-group'>
                     <Button
                       type='button'
-                      //onClick={handleChangeLanguage}
+                      onClick={handleChangeLanguage}
                     >
-                      {/*{i18n.t('change-language')}*/} Choose language
+                      {i18n.t('change-language')}
+                      Choose language
                     </Button>
                   </div>
-                </Grid>
-                <Grid item xs>
-                  <Typography variant='subtitle2'>
-                    {/* {i18n.t("change-language")} */}Don't have an account?
-                    <Button style={{ color: 'blue' }} onClick={() => router.push(`/auth/register`)}>
-                      Sign up
-                    </Button>
-                  </Typography>
-                </Grid>
+                </Grid>*/}
               </Grid>
             </Paper>
           </Form>

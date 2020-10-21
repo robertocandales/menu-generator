@@ -201,7 +201,7 @@ const MenuScreen = () => {
       ) : (
         <>
           <Grid container spacing={2} direction='row' justify='center' alignItems='stretch'>
-            <Grid item sm={2} container>
+            <Grid item sm={2} xs={12} container>
               <LeftSideBar
                 DBTemplates={DBTemplates}
                 setSelectedTemplateId={setSelectedTemplateId}
@@ -209,27 +209,29 @@ const MenuScreen = () => {
               />
             </Grid>
 
-            <Grid item sm={10} container spacing={2}>
+            <Grid item sm={10} xs={12} container spacing={2}>
               <Grid
                 item
                 sm={12}
+                xs={12}
                 container
                 direction='row'
                 justify='space-around'
                 alignItems='center'>
-                <Grid sm={12} item container>
+                <Grid xs={12} item container>
                   <Paper
                     elevation={3}
                     style={{
-                      height: '70px',
+                      height: '10%',
                       display: 'flex',
                       alignItems: 'center',
                       padding: '10px',
-                      width: '99%',
+                      width: '100%',
                     }}>
                     <Grid
                       item
                       sm={12}
+                      xs={12}
                       container
                       direction='row'
                       justify='space-between'
@@ -253,6 +255,7 @@ const MenuScreen = () => {
               <Grid
                 item
                 sm={12}
+                xs={12}
                 container
                 direction='row'
                 justify='space-between'
@@ -288,6 +291,7 @@ const MenuScreen = () => {
                 <Grid
                   item
                   sm={3}
+                  xs={12}
                   container
                   container
                   direction='column'

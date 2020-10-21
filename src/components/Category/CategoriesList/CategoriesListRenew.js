@@ -10,9 +10,11 @@ import Checkbox from '@material-ui/core/Checkbox';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers';
 import _ from 'lodash';
-import { Paper, Grid, Avatar, Button } from '@material-ui/core';
+import { Paper, Grid, Avatar, Button, Typography } from '@material-ui/core';
 import { store } from '../../../context/store';
 import { updateCategory } from '../../../firebase/db/category';
+import IconButton from '@material-ui/core/IconButton';
+import EditIcon from '@material-ui/icons/Edit';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -157,25 +159,21 @@ const CategoriesListRenew = ({
   return (
     <form
       onSubmit={handleSubmit((data) => console.log('DATA --->', data))}
-      style={{ width: '100%', padding: '10px' }}>
+      style={{ width: '100%' }}>
       <FormControl error={!!errors.item_ids?.message} style={{ width: '100%' }}>
         <FormHelperText>{errors.item_ids?.message}</FormHelperText>
         <Grid container direction='row' justify='center' alignItems='center'>
-          {/*<Grid item sm={0}></Grid>*/}
-          <Grid item sm={3}>
-            <div style={{ marginLeft: '-50px' }}>Categories</div>
+          <Grid item xs={4} sm={4}>
+            <div style={{ marginLeft: '0px' }}>Categories</div>
           </Grid>
-          <Grid item sm={2}>
-            <div style={{ width: '100px', marginLeft: '-10px', textAlign: 'center' }}>
-              Visible on Digital Menu
+          <Grid item xs={2}>
+            <div style={{ width: '100px', marginLeft: '0px', textAlign: 'center' }}>
+              Visible on Menu
             </div>
           </Grid>
-          <Grid item sm={2}>
-            <div style={{ width: '100px', marginLeft: '-10px', textAlign: 'center' }}>
-              Visible for take away
-            </div>
+          <Grid item xs={2}>
+            <div style={{ width: '100px', marginLeft: '0px', textAlign: 'center' }}>Delivery</div>
           </Grid>
-          {/*<Grid item sm={2}></Grid>*/}
         </Grid>
         <Controller
           name='categories_selected'
@@ -186,7 +184,7 @@ const CategoriesListRenew = ({
                 container
                 style={{
                   width: '100%',
-                  padding: '5px',
+                  paddingTop: '5px',
                   height: '80px',
                 }}>
                 {' '}
@@ -198,24 +196,30 @@ const CategoriesListRenew = ({
                     alignItems: 'center',
                     justifyContent: 'center',
                     width: '100%',
+                    padding: '5px',
                   }}>
                   {' '}
-                  <Grid container direction='row' justify='center' alignItems='center'>
-                    <Grid item sm={1}>
+                  <Grid
+                    container
+                    direction='row'
+                    justify='space-around'
+                    alignItems='center'
+                    wrap='nowrap'>
+                    <Grid item xs={2} sm={1}>
                       <Avatar alt={item.title} src={item.image} />{' '}
                     </Grid>
 
-                    <Grid item sm={2}>
-                      {item.title}
+                    <Grid item xs={2} zeroMinWidth>
+                      <Typography noWrap> {item.title}</Typography>
                     </Grid>
-                    <Grid item sm={2}>
+                    <Grid item xs={2}>
                       {item.saleTaxes
                         ? item.saleTaxes.map((sales, i) => <div key={i}>{sales.taxPercent}%</div>)
                         : null}{' '}
                     </Grid>
                     <Grid
                       item
-                      sm={2}
+                      xs={2}
                       //style={{ marginLeft: '5px' }}
                     >
                       <FormControlLabel
@@ -235,7 +239,7 @@ const CategoriesListRenew = ({
                     </Grid>
                     <Grid
                       item
-                      sm={2}
+                      xs={1}
                       //style={{ marginLeft: '5px' }}
                     >
                       <FormControlLabel
@@ -252,21 +256,14 @@ const CategoriesListRenew = ({
                       />{' '}
                     </Grid>
 
-                    <Grid item sm={1}>
-                      <Button
-                        style={{
-                          padding: 10,
-                          paddingRight: 0,
-                          boxShadow: '0px 1px 3px grey',
-                        }}
+                    <Grid item xs={1}>
+                      {/*<Button onClick={() => editCategoryData(item)}>Edit</Button>*/}
+                      <IconButton
+                        aria-label='delete'
+                        className={classes.margin}
                         onClick={() => editCategoryData(item)}>
-                        <img
-                          alt='edit icon'
-                          src={'/assets/images/editIcon.png'}
-                          className={classes.icon}
-                          style={{ width: 20 }}
-                        />
-                      </Button>
+                        <EditIcon />
+                      </IconButton>
                     </Grid>
                   </Grid>
                 </Paper>{' '}

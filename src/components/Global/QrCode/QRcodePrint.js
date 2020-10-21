@@ -18,7 +18,7 @@ export const saveQR = () => {
     const width = pdf.internal.pageSize.getWidth();
     const height = pdf.internal.pageSize.getHeight();
     pdf.addImage(imgData, 'PNG', 0, 0, width, height);
-    pdf.save('smartavolaQR.pdf');
+    pdf.save('QRmenu.pdf');
   });
 };
 
@@ -58,21 +58,21 @@ const QRcodePrint = () => {
                   textAlign: 'center',
                   margin: '0px 0px 25px 0px',
                 }}>
-                <img
+                {/*<img
                   alt='big-logo'
                   style={{
                     width: '80%',
                     height: 'auto',
                   }}
                   src={'/assets/images/logo.png'}
-                />
+                />*/}
               </Grid>{' '}
               {!loading && (
-                <Grid item xs>
+                <Grid item>
                   <QRCode value={baseURL} size={270} fgColor='#333333' />
                 </Grid>
               )}
-              <Grid item xs container style={{ padding: 20 }}>
+              <Grid item container style={{ padding: 20 }}>
                 <Typography variant='body1'>
                   1- Open camera
                   <br />
@@ -82,7 +82,7 @@ const QRcodePrint = () => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid item xs style={{ width: '100%' }}>
+            <Grid item style={{ width: '100%' }}>
               <Button
                 type='submit'
                 fullWidth={true}

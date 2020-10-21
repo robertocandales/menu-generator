@@ -72,7 +72,7 @@ const AddCategory = ({
   return (
     <>
       <Grid container direction='row' justify='space-around' alignItems='center'>
-        <Grid item sm={12}>
+        <Grid item sm={12} xs={12}>
           <TextField
             name='category'
             value={category}
@@ -85,7 +85,7 @@ const AddCategory = ({
           />
         </Grid>
         <Grid item sm={12} container direction='row' justify='space-around' alignItems='center'>
-          <Grid item sm={11}>
+          <Grid item sm={11} xs={11}>
             <SelectComponent1
               DBSalesTaxOptions={DBSalesTaxOptions}
               setDBSalesTaxOptions={setDBSalesTaxOptions}
@@ -97,9 +97,9 @@ const AddCategory = ({
               setvales={setvales}
             />{' '}
           </Grid>
-          <Grid item sm={1}>
+          <Grid item sm={1} xs={1}>
             <IconButton color='primary' onClick={toggleAddSalesTaxDialog}>
-              <AddCircleIcon style={{ fontSize: 30, marginRight: '-20px' }} />
+              <AddCircleIcon style={{ fontSize: 30, marginRight: '-10px' }} />
             </IconButton>
           </Grid>
         </Grid>
