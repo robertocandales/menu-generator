@@ -429,7 +429,7 @@ const SushiPremium = () => {
       ) : (
         <div className={classes.innerRoot}>
           <Grid container direction='column' justify='flex-start' alignItems='center'>
-            {renderSmartLogo()}
+            {/*{renderSmartLogo()}*/}
             {renderMenuLogo()}
             {renderRestaurantDetails()}
             {renderSocialLinks()}

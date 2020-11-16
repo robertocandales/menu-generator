@@ -414,7 +414,7 @@ const NikuPremium = ({ Menus }) => {
       ) : (
         <div className={classes.innerRoot}>
           <Grid container direction='column' justify='center' alignItems='center'>
-            {renderSmartLogo()}
+            {/*{renderSmartLogo()}*/}
             {renderMenuLogo()}
             {renderRestaurantDetails()}
             {renderSocialLinks()}
