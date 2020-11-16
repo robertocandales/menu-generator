@@ -93,8 +93,6 @@ const AmericanPremium = () => {
 
   localStorage.setItem('user', JSON.stringify(query));
 
-  const user = JSON.parse(localStorage.getItem('user'));
-
   React.useEffect(() => {
     const getUrl = window.location;
     QRcodeURLDispatch({
