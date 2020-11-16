@@ -35,7 +35,7 @@
     "material-ui-icons": "^1.0.0-beta.36",
     "moment": "^2.27.0",
     "next": "9.5.2",
-    "next-images": "^1.6.0",
+    "next-images": "^1.6.2",
     "next-react-svg": "^1.1.2",
     "npm": "^6.14.8",
     "prop-types": "^15.7.2",
