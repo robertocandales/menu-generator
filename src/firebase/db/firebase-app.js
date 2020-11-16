@@ -4,6 +4,7 @@ import 'firebase/storage';
 import 'firebase/auth';
 
 const firebaseConfig = JSON.parse(process.env.NEXT_PUBLIC_FIREBASE_CONFIG);
+
 let projectStorage = '';
 if (typeof window !== 'undefined' && !firebase.apps.length) {
   const firebaseApp = firebase.initializeApp(firebaseConfig);

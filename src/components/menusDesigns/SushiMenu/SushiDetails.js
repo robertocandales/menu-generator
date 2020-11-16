@@ -71,9 +71,7 @@ const useStyles = makeStyles((theme) => ({
 const SushiDetails = () => {
   const classes = useStyles();
   const router = useRouter();
-
   const [product, setProduct] = useState({});
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
