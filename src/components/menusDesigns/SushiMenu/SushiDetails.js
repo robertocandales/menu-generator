@@ -176,7 +176,7 @@ const SushiDetails = () => {
             {renderImage()}
             {renderDetails()}
             {renderBackButton()}
-            {renderSmartLogo()}
+            {/*{renderSmartLogo()}*/}
           </Grid>
         </div>
       )}

@@ -188,7 +188,7 @@ const NikuDetails = () => {
             {renderImage()}
             {renderDetails()}
             {renderBackButton()}
-            {renderSmartLogo()}
+            {/*{renderSmartLogo()}*/}
           </Grid>
         </div>
       )}

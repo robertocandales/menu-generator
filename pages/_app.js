@@ -20,12 +20,13 @@ export default function MyApp(props) {
     }
 
     console.log(router.pathname.indexOf('login'));
+    console.log(router.pathname.indexOf('menus'));
     if (
       !localStorage.getItem('user') &&
-      router.pathname.indexOf('auth') == -1 &&
-      router.pathname.indexOf('menus') == -1
+      router.pathname.indexOf('auth') === -1 &&
+      router.pathname.indexOf('menus') === -1
     ) {
-      router.replace('/auth/login');
+      router.push('/auth/login');
     }
   }, []);
 
