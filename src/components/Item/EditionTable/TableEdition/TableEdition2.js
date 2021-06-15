@@ -29,13 +29,13 @@ const TableEdition2 = ({
   const COLUMNS = [
     { title: 'Name', field: 'name', emptyValue: 0 },
     {
-      title: 'Price 1 ($)',
+      title: 'Price ($)',
       field: 'price',
       emptyValue: 0,
       //  type: 'currency',
     },
     {
-      title: 'Price 2 ($)',
+      title: 'Delivery ($)',
       field: 'takeAwayPrice',
       emptyValue: 0,
       //  type: 'currency',

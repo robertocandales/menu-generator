@@ -54,7 +54,7 @@ const FormFields = () => {
                 control={
                   <Checkbox checked={state.checkedA} onChange={handleChange} name='digitalMenu' />
                 }
-                label='Visible on Digital Menu'
+                label='Visible on digital menu'
               />
               <FormControlLabel
                 control={

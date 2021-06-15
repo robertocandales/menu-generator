@@ -77,7 +77,7 @@ const headCells = [
     id: '5',
     numeric: true,
     disablePadding: false,
-    label: 'Visible on Digital Menu',
+    label: 'Visible on digital menu',
   },
   {
     id: '6',

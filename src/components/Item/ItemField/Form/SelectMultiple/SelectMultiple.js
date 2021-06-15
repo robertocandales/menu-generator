@@ -13,7 +13,6 @@ import Chip from '@material-ui/core/Chip';
 const useStyles = makeStyles((theme) => ({
   formControl: {
     width: '100%',
-    maxWidth: 300,
   },
   chips: {
     display: 'flex',
@@ -61,22 +60,10 @@ function getStyles(name, personName, theme) {
 }
 const SelectMultiple = ({ menuItems, getValue, value = [] }) => {
   const classes = useStyles();
-  const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
   const handleChange = (event) => {
     getValue(event.target.value);
   };
 
-  const handleChangeMultiple = (event) => {
-    const { options } = event.target;
-    const value = [];
-    for (let i = 0, l = options.length; i < l; i += 1) {
-      if (options[i].selected) {
-        value.push(options[i].value);
-      }
-    }
-    getValue(value);
-  };
   return (
     <div>
       <FormControl className={classes.formControl} fullWidth>

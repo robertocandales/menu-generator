@@ -45,7 +45,7 @@ const DigitalMenuDescription = ({ picture, setPicture, menuDescription, setMenuD
   return (
     <>
       {/* information for online store */}
-      <Paper style={{ padding: '10px', height: 178, width: '100%' }} elevation={4}>
+      <Paper style={{ padding: '10px', height: '100%', width: '100%' }} elevation={4}>
         <Grid item container justify='center' alignItems='center' direction='row' spacing={1}>
           <Grid item sm={8} xs={12}>
             <TextField
@@ -78,7 +78,13 @@ const DigitalMenuDescription = ({ picture, setPicture, menuDescription, setMenuD
                 />
               )}
             </div>
-            <div style={{ height: '100%', marginTop: '0px' }}>
+            <div
+              style={{
+                height: '100%',
+                marginTop: '0px',
+                display: 'flex',
+                alignItems: 'center',
+              }}>
               <UploadButton
                 buttonProps={{
                   variant: 'contained',
@@ -86,16 +92,15 @@ const DigitalMenuDescription = ({ picture, setPicture, menuDescription, setMenuD
 
                   style: {
                     backgroundColor: COLORS.PRIMARY,
-                    height: 40,
+                    height: '100%',
                     color: '#000',
-                    marginTop: '-20px',
                   },
                 }}
                 rootProps={{}}
                 btnText={
-                  <div>
-                    <Typography variant='caption'>add picture</Typography>
-                  </div>
+                  <>
+                    <Typography variant='caption'>Add picture</Typography>
+                  </>
                 }
                 onChange={(pictures) => {
                   const file = pictures[0];

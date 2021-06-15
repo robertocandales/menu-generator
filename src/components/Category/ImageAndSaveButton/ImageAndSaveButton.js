@@ -109,19 +109,6 @@ const ImageAndSaveButton = ({
           />
         </Grid>
         <Grid item sm={edit ? 2 : 2}>
-          {/*<Fab
-            color='primary'
-            variant='round'
-            style={{
-              textAlign: 'center',
-              padding: '2em',
-              width: '100%',
-              borderRadius: 100,
-            }}
-            //onClick={sendData}
-            type='submit'>
-            save
-          </Fab>*/}
           <Button color='primary' variant='contained' type='submit'>
             Save
           </Button>

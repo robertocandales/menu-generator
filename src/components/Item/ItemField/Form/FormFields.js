@@ -118,7 +118,7 @@ const FormFields = ({
       <Paper style={{ padding: '10px', width: '100%', height: '100%' }} elevation={4}>
         <Grid container direction='column' justify='center' alignItems='stretch' item>
           <Grid xs={12} md={12} item container direction='row' justify='center' alignItems='center'>
-            <Grid item sm={6} xs={12}>
+            <Grid item xs={6} md={8}>
               <FormControl fullWidth>
                 <TextField
                   name='Name'
@@ -128,15 +128,15 @@ const FormFields = ({
                 />
               </FormControl>
             </Grid>
-            <Grid item sm={2} xs={12}>
+            <Grid item xs={3} md={2}>
               <CheckboxComponent
                 name='visibleOnDigitalMenu'
-                label='Visible on Digital Menu'
+                label='Visible on digital menu'
                 getValue={setVisibleDigitalMenu}
                 value={visibleDigitalMenu}
               />
             </Grid>
-            <Grid item sm={2} xs={12}>
+            <Grid item xs={3} md={2}>
               <CheckboxComponent
                 name='visibleForTakeAway'
                 label='Visible For Take Away'
@@ -151,9 +151,9 @@ const FormFields = ({
             justify='space-between'
             alignItems='center'
             item
-            sm={6}
+            md={12}
             xs={12}>
-            <Grid item sm={3} xs={12}>
+            <Grid item md={3} xs={12}>
               <FormControl fullWidth>
                 <TextField
                   name='Price'
@@ -164,8 +164,8 @@ const FormFields = ({
                 />
               </FormControl>
             </Grid>
-            <Grid item sm={3} xs={12}>
-              <FormControl>
+            <Grid item md={3} xs={12}>
+              <FormControl fullWidth>
                 <TextField
                   name='TakeAwayPrice'
                   label='Delivery price'
@@ -176,7 +176,7 @@ const FormFields = ({
               </FormControl>
             </Grid>
 
-            <Grid item sm={3} xs={12}>
+            <Grid item md={3} xs={12}>
               <SelectMultiple
                 menuItems={allergens}
                 getValue={setAllergensValue}
@@ -191,28 +191,28 @@ const FormFields = ({
               direction='row'
               justify='space-between'
               alignItems='center'
-              sm={6}
+              md={8}
               xs={12}>
-              <Grid item sm={3} xs={12}>
+              <Grid item md={5} xs={12}>
                 <SelectComponent
                   name='category'
-                  label='Select Category'
+                  label='Select category'
                   menuItems={categories && !loading ? categories : []}
                   getValue={setCategoryValue}
                   value={categoryValue}
                 />
               </Grid>
-              <Grid item sm={4} xs={12}>
+              <Grid item md={5} xs={12}>
                 <SelectComponent
                   name='subCategory'
-                  label='Select Sub Category'
+                  label='Select sub category'
                   menuItems={subCategories ? subCategories : []}
                   getValue={setSubcategoryValue}
                   value={subcategoryValue}
                 />
               </Grid>
             </Grid>
-            <Grid item sm={6} xs={12}>
+            <Grid item md={4} xs={12}>
               <ResetAndSaveButton />
             </Grid>
           </Grid>
